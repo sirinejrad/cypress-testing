@@ -22,3 +22,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npx cypress run'    
+
+- task: CmdLine@2
+  inputs:
+    script: 'npx cypress run --reporter junit'

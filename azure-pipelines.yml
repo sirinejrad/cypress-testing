@@ -26,3 +26,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npx cypress run --reporter junit'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results/my-test-output-*.xml'

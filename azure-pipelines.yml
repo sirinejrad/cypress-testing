@@ -27,10 +27,6 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'artifact2'
     publishLocation: 'pipeline'
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'current'
-    targetPath: '$(Pipeline.Workspace)'    
 - task: CmdLine@2
   inputs:
     script: 'npx cypress run'    

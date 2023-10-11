@@ -15,5 +15,8 @@ steps:
     project: '6fe6ea12-241d-496e-b844-5d481b3c3694'
     definition: '7'
     buildVersionToDownload: 'latest'
-    artifactName: 'artifcat2'
+    artifactName: 'artifact2'
     targetPath: '$(Pipeline.Workspace)'
+- task: CmdLine@2
+  inputs:
+    script: 'npx cypress run'    

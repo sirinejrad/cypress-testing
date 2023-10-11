@@ -21,11 +21,11 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install'
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'artifact1'
-    publishLocation: 'Container'
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'artifact2'
+    publishLocation: 'pipeline'
 - task: CmdLine@2
   inputs:
     script: 'npx cypress run'    

@@ -1,5 +1,6 @@
 # Node.js
 
+
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -19,6 +20,13 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install'
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: '6fe6ea12-241d-496e-b844-5d481b3c3694'
+    definition: '6'
+    buildVersionToDownload: 'latest'
+    targetPath: '$(Pipeline.Workspace)'    
 - task: CmdLine@2
   inputs:
     script: 'npx cypress run'    
